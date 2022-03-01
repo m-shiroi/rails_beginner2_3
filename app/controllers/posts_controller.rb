@@ -22,9 +22,12 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
+    
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      # 投稿を登録しました　になるはず→OK
+      flash[:notice] = t ('info.create.success'), model: (t 'activerecord.models.post')
+      redirect_to @post
+#      redirect_to @post, notice: 'Post was successfully created.'
     else
       render :new
     end

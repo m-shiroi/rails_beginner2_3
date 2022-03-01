@@ -1,0 +1,38 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        id: ID
+        title: タイトル
+        body: 内容
+        created_at: 登録日時
+        updated_at: 更新日時
+      user:
+        id: ID
+        name: 氏名
+        admin: 管理者権限
+        password: パスワード
+        password_confirmation: パスワード（確認） 
+        created_at: 登録日時
+        updated_at: 更新日時
+    models:
+      post: 投稿
+      user: ユーザ
+    errors:
+      messages:
+        blank: "を入力してください"
+        record_invalid: "バリデーションに失敗しました：%{errors}"
+        redirect_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  info:
+    create:
+      success: "%{model}を登録しました"
+    
